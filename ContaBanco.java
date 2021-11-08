@@ -30,19 +30,22 @@ public class ContaBanco {
 
         for (int i = 0; i < 1; i++){
             this.setAgencia(gerador.nextInt(9999));
-            System.out.println("Agência = " + this.getAgencia());
+            System.out.println("\nAgência = " + this.getAgencia());
+            if (this.getAgencia() < 1000){
+                this.setAgencia(this.getAgencia() + 1000);
+            }
         }
 
         for (int i = 0; i < 1; i++) {
-            this.setNumeroConta("Numero conta: " + gerador.nextInt(99999999) + "-" + gerador.nextInt(9));
-            System.out.println(this.getNumeroConta());
+            this.setNumeroConta(gerador.nextInt(99999999) + "-" + gerador.nextInt(9));
+            System.out.println("\nNúmero conta = " + this.getNumeroConta());
         }
 
-        System.out.println("Qual o nome do banco: ");
+        System.out.println("\nQual o nome do banco: ");
         this.setNomeBanco(leia.nextLine());
 
 
-        System.out.println("Qual o nome da agência: ");
+        System.out.println("\nQual o nome da agência: ");
         this.setNomeAgencia(leia.nextLine());
 
 
@@ -75,6 +78,8 @@ public class ContaBanco {
             this.setContaAberta(false);
             System.out.println("Retornando o saldo de " + this.getSaldo() + " para fechar a conta");
             System.out.println("Conta fechada");
+            this.setTipo(4);
+            System.out.println("Tipo de conta: " + this.getTipo() + " => Conta encerrada");
             extrato.add("Usuário fechou conta");
 
         } else if (!this.getContaAberta()) {
@@ -120,7 +125,7 @@ public class ContaBanco {
     }
 
     public void mostrarExtrato() {
-        System.out.println("Histórico usuário: ");
+        System.out.println("\nHistórico usuário: ");
         for (String s : extrato) {
             System.out.println(s);
         }

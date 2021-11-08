@@ -45,7 +45,8 @@ public class Menu {
             System.out.println("\nQual sua próxima ação, caso já tenha concluído tudo, digite 8");
             escolha = leia.nextInt();
             if (escolha == 8) {
-                System.out.println("Saindo...");
+                System.out.println("Saindo e disponibilizando seu histórico...");
+                c.mostrarExtrato();
             }
         }
         leia.close();
