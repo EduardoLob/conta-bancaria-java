@@ -23,7 +23,7 @@ public class ContaBanco {
 
     public void abrirConta() {
 
-        System.out.println("MENU: ");
+        System.out.println("MENU DE CRIAÇÃO: ");
         System.out.println("1 - Conta corrente \n2 - Conta poupança \n3 - Conta conjunta ");
         this.setTipo(leia.nextInt());
         leia.nextLine();
